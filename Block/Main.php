@@ -14,11 +14,7 @@ class Main extends \Magento\Framework\View\Element\Template
     }
     protected function _prepareLayout()
     {
-       /* $test = $this->_testFactory->create();
-        $test->setData('Name','Jhon')->save();
-        $test->setData('Email','Jhon@yahoomail.com')->save();
-        var_dump('Done');
-        exit;*/
+      
         print_r('Test'); die();
         $test = $this->_testFactory->create();
     }
