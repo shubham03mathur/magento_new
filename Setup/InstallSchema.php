@@ -8,33 +8,39 @@ class InstallSchema implements \Magento\Framework\Setup\InstallSchemaInterface
         $installer->startSetup();
         //START: install stuff
         //END:   install stuff
-        
+         
 //START table setup
 $table = $installer->getConnection()->newTable(
             $installer->getTable('excellence_table_test')
     )->addColumn(
-            'table_id',
+            'excellence_table_test_id',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
             null,
             [ 'identity' => true, 'nullable' => false, 'primary' => true, 'unsigned' => true, ],
             'Entity ID'
         )->addColumn(
-            'Name',
+            'title',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
             255,
             [ 'nullable' => false, ],
-            'Demo Name'
+            'Demo Title'
         )->addColumn(
-            'Email',
+            'email',
             \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
             255,
             [ 'nullable' => false, ],
             'Demo Email'
         )->addColumn(
-            'update_time',
+            'creation_time',
             \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
             null,
             [ 'nullable' => false, 'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT, ],
+            'Creation Time'
+        )->addColumn(
+            'update_time',
+            \Magento\Framework\DB\Ddl\Table::TYPE_TIMESTAMP,
+            null,
+            [ 'nullable' => false, 'default' => \Magento\Framework\DB\Ddl\Table::TIMESTAMP_INIT_UPDATE, ],
             'Modification Time'
         )->addColumn(
             'is_active',
