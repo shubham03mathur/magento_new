@@ -26,10 +26,5 @@ class Main extends \Magento\Framework\View\Element\Template
     {
         return $this->_urlBuilder->getUrl("excellence/index/Add");
     }
-    public function getDeleteUrl($id)
-    {
-        $deleteUrl = "excellence/index/delete/id/".$id;
-        return $this->_urlBuilder->getUrl($deleteUrl);
-    }
 }
 ?>

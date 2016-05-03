@@ -23,13 +23,14 @@ class Test extends \Magento\Framework\Model\AbstractModel implements TestInterfa
         $id = $this->getResource()->loadByTitle($title);
         return $this->load($id);
     }*/
-   public function saveData($data)
-    {
-      if(isset($data['title'])){
-
-         return $this->setData($data)->save();
-      }   
-      return;
-     }
+   // public function saveData($data)
+   //  {
+   //    if(isset($data['title'])){
+   //        print_r('test');
+   //        die();
+   //       return $this->setData($data)->save();
+   //    }   
+   //    return;
+   //   }
 }
 ?>
