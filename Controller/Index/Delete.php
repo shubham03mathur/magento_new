@@ -1,8 +1,6 @@
 <?php
 namespace Excellence\Table\Controller\Index;
 use Magento\Framework\Controller\ResultFactory; 
- 
- 
 class Delete extends \Magento\Framework\App\Action\Action
 {
     protected $resultPageFactory;

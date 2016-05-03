@@ -1,6 +1,5 @@
 <?php
 namespace Excellence\Table\Block;
-  
 class Main extends \Magento\Framework\View\Element\Template
 {   
     protected $_testFactory;
@@ -16,9 +15,6 @@ class Main extends \Magento\Framework\View\Element\Template
     {
        
         $test = $this->_testFactory->create()->getCollection();
-        // $test->setTitle('Test Title'); 
-        // $test->setEmail('shubham3mathur@gmail.com');
-        // $test->save();
         $this->setTestModel($test);
 
     }

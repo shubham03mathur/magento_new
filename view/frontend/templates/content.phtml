@@ -1,7 +1,5 @@
 <?php  
 $arr=$block->getTestModel()->getData();
-// print_r($arr);
-
 ?>
 <form class="form>"
       method="post"
@@ -29,15 +27,11 @@ foreach($arr as $data)
 ?>
 </table>
 <div class="actions-toolbar" align="center">
-    <div class="primary"><button type="submit" class="action submit primary" name="add" id="add" onc><span><?php /* @escapeNotVerified */ echo __('Add New')?></span></button>
+    <div class="primary"><button type="submit" class="action submit primary" name="add" id="add" onc><span><?php echo __('Add New')?></span></button>
     </div>
 </div>
 </form>
-<!--<div class="actions-toolbar">
-    <div class="primary"><button type="submit" class="action submit primary" name="add" id="add" onc><span><?php /* @escapeNotVerified */ 
-    //echo __('Add New')?></span></button>
-    </div>
-</div>-->
+
 
 
 

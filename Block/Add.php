@@ -14,11 +14,9 @@ class Add extends \Magento\Framework\View\Element\Template
     }
     protected function _prepareLayout()
     {
-        // print_r('Add Block Called!');
         $test = $this->_testFactory->create()->getCollection();
         $this->setTestModel($test);
        
-
     } 
     public function getListUrl()
     {
