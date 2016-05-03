@@ -1,7 +1,5 @@
 <?php
 namespace Excellence\Table\Controller\Index;
- 
- 
 class Edit extends \Magento\Framework\App\Action\Action
 {
     protected $resultPageFactory;
@@ -19,10 +17,10 @@ class Edit extends \Magento\Framework\App\Action\Action
     {
         $test = $this->_testFactory->create();
         $post = $this->getRequest()->getPost('data');
+        $id   = $this->getRequest()->getParam('id');
         if(isset($post['submit'])) {
-            $test->saveEdit($post);
+            $test->saveEdit($post,$id);
         }
-        
         return $this->resultPageFactory->create(); 
     } 
 }

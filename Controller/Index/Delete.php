@@ -18,15 +18,13 @@ class Delete extends \Magento\Framework\App\Action\Action
      
     public function execute()
     {
-        print_r('Delete Processing');
         $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
-		print_r('Delete Processing again');
         $test = $this->_testFactory->create();
         $id = $this->getRequest()->getParam('id');
         if($test->deleteById($id)){
-            $this->messageManager->addSuccess('Record Successfully Deleted!');
             $resultRedirect->setUrl($this->_redirect->getRefererUrl());
             return $resultRedirect;
+            $this->messageManager->addSuccess('Record Successfully Deleted!');
         }
       
    }

@@ -13,13 +13,13 @@ class Test extends \Magento\Framework\Model\AbstractModel implements TestInterfa
     {
         return [self::CACHE_TAG . '_' . $this->getId()];
     }
-    public function saveData($data){
-        if(isset($data['title'])){
-             print_r($data); die();
-            $model = $this->setTitle($data['title']);
-            $model = $this->setEmail($data['email']);
-            $model = $this->setIsActive($data['IsActive']);
-            return $model->save();
+    public function saveData($info){
+        if(isset($info['data']['title'])){
+             $model = $this->load($info['data']['id']);
+             $this->setTitle($info['data']['title']);
+             $this->setEmail($info['data']['email']);
+             $this->setIsActive($info['data']['IsActive']);
+             return $this->save();
         }
         return;
     }
@@ -37,7 +37,7 @@ class Test extends \Magento\Framework\Model\AbstractModel implements TestInterfa
         $model = $this->load($data['id']);
         $model->setTitle($data['title']);
         $model->setEmail($data['email']);
-        $model->setIsActive($data['status']);
+        $model->setIsActive($data['IsActive']);
         return $model->save();
     }
 }

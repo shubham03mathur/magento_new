@@ -20,8 +20,7 @@ class Main extends \Magento\Framework\View\Element\Template
     }
 	public function getEditUrl($id)
     {
-        $editUrl = "excellence/index/edit/id/".$id;
-        return $this->_urlBuilder->getUrl($editUrl);
+        return $this->_urlBuilder->getUrl("excellence/index/edit/", array('id' => $id));
     }
     public function getAddUrl()
     {
@@ -29,8 +28,7 @@ class Main extends \Magento\Framework\View\Element\Template
     }
     public function getDeleteUrl($id)
     {
-        $deleteUrl = "excellence/index/delete/id/".$id;
-        return $this->_urlBuilder->getUrl($deleteUrl);
+        return $this->_urlBuilder->getUrl("excellence/index/delete/", array('id' => $id));
     }
 }
 ?>

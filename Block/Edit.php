@@ -1,6 +1,5 @@
 <?php
 namespace Excellence\Table\Block;
-  
 class Edit extends \Magento\Framework\View\Element\Template
 {   
 	protected $_testFactory;

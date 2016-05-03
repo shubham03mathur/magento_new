@@ -1,7 +1,5 @@
 <?php
 namespace Excellence\Table\Controller\Index;
- 
- 
 class Add extends \Magento\Framework\App\Action\Action
 {
     protected $resultPageFactory;
@@ -12,7 +10,6 @@ class Add extends \Magento\Framework\App\Action\Action
         \Excellence\Table\Model\TestFactory $testFactory,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory,
         \Magento\Framework\Message\ManagerInterface $messageManager)
-       
     {
         $this->_testFactory = $testFactory;
         $this->resultPageFactory = $resultPageFactory; 
@@ -24,17 +21,12 @@ class Add extends \Magento\Framework\App\Action\Action
     {
     	$test = $this->_testFactory->create();
         $post = $this->getRequest()->getPostValue();
-      
         if(isset($post['data']['submit'])){
-            $test->setTitle($post['data']['title'])->save();
-            $test->setEmail($post['data']['email'])->save();
-            $test->setIsActive($post['data']['IsActive'])->save();  
-
+           $test->saveData($post);
+           $this->messageManager->addSuccess( __('Data Saved Successfully!!') );
         }
-         $this->messageManager->addSuccess( __('Data Saved Successfully!!') );
         return $this->resultPageFactory->create();
-    }
-      
+    }   
 }
 
 ?>
