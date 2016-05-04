@@ -14,7 +14,7 @@ class Main extends \Magento\Framework\View\Element\Template
     protected function _prepareLayout()
     {
        
-        $test = $this->_testFactory->create()->getCollection();
+        $test = $this->_testFactory->create()->getCollection()->setOrder('excellence_table_test_id','desc');
         $this->setTestModel($test);
 
     }
@@ -26,9 +26,15 @@ class Main extends \Magento\Framework\View\Element\Template
     {
         return $this->_urlBuilder->getUrl("excellence/index/Add");
     }
+    
     public function getDeleteUrl($id)
     {
         return $this->_urlBuilder->getUrl("excellence/index/delete/", array('id' => $id));
     }
+    public function getListUrl()
+    {
+        return $this->_urlBuilder->getUrl("excellence/index/index/");
+    }
+
 }
 ?>

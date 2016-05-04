@@ -1,5 +1,6 @@
 <?php
 namespace Excellence\Table\Controller\Index;
+use Magento\Framework\Controller\ResultFactory; 
 class Add extends \Magento\Framework\App\Action\Action
 {
     protected $resultPageFactory;
@@ -13,6 +14,7 @@ class Add extends \Magento\Framework\App\Action\Action
     {
         $this->_testFactory = $testFactory;
         $this->resultPageFactory = $resultPageFactory; 
+        $this->resultRedirectFactory = $context->getResultRedirectFactory(); 
         $this->messageManager = $messageManager;     
         return parent::__construct($context,$messageManager);
     }
@@ -24,6 +26,9 @@ class Add extends \Magento\Framework\App\Action\Action
         if(isset($post['data']['submit'])){
            $test->saveData($post);
            $this->messageManager->addSuccess( __('Data Saved Successfully!!') );
+           $resultRedirect = $this->resultRedirectFactory->create();
+           $resultRedirect->setPath('*/*/');
+             return $resultRedirect;
         }
         return $this->resultPageFactory->create();
     }   

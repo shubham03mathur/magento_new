@@ -21,14 +21,6 @@ else{
               id="edit-form"
               data-mage-init='{"validation":{}}'>
             <fieldset class="fieldset" data-hasrequired="<?php echo __('* Required Fields') ?>">
-
-                <div class="field id required">
-                    <label class="label" for="id"><span><?php  echo __('Id#') ?></span></label>
-                    <div class="control">
-                        <input name="data[id]" id="id" type="text" class="input-text" title="<?php  echo __('Id#') ?>" value="<?php echo $data['excellence_table_test_id']; ?>">
-                    </div>
-                </div>
-
                 <div class="field title required">
                     <label class="label" for="title"><span><?php  echo __('Title') ?></span></label>
                     <div class="control">
@@ -52,8 +44,8 @@ else{
                     </div>
                 </div>
 
-                <div class="actions-toolbar">
-                    <div class="primary"><input type="submit" class="action login primary" name="data[submit]" id="send2" value="<?php  echo __('Save') ?>"></div>
+                <div class="actions-toolbar" align="left">
+                    <div class="primary"><input type="submit" class="action login primary" name="data[submit]" id="send2" value="<?php  echo __('Save') ?>"></div> 
                     <div class="secondary"><a class="action remind" href="<?php echo $block->getListUrl(); ?>"><span><?php  echo __('Go back to list') ?></span></a></div>
                 </div>
             </fieldset>

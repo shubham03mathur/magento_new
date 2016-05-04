@@ -15,7 +15,6 @@ class Test extends \Magento\Framework\Model\AbstractModel implements TestInterfa
     }
     public function saveData($info){
         if(isset($info['data']['title'])){
-             $model = $this->load($info['data']['id']);
              $this->setTitle($info['data']['title']);
              $this->setEmail($info['data']['email']);
              $this->setIsActive($info['data']['IsActive']);
@@ -33,8 +32,8 @@ class Test extends \Magento\Framework\Model\AbstractModel implements TestInterfa
             return $this->load($id)->getData();
         }
     }
-    public function saveEdit($data){
-        $model = $this->load($data['id']);
+    public function saveEdit($data,$uid){
+        $model = $this->load($uid);
         $model->setTitle($data['title']);
         $model->setEmail($data['email']);
         $model->setIsActive($data['IsActive']);

@@ -22,9 +22,11 @@ class Delete extends \Magento\Framework\App\Action\Action
         $test = $this->_testFactory->create();
         $id = $this->getRequest()->getParam('id');
         if($test->deleteById($id)){
+            $this->messageManager->addSuccess('Record Successfully Deleted!');
             $resultRedirect->setUrl($this->_redirect->getRefererUrl());
             return $resultRedirect;
-            $this->messageManager->addSuccess('Record Successfully Deleted!');
+
+
         }
       
    }
